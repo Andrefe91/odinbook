@@ -76,3 +76,5 @@ gem "ruby-lsp", "~> 0.14.6"
 gem "ruby-lsp-rails", "~> 0.3.3"
 
 gem "solargraph", "~> 0.50.0"
+
+gem "faker", "~> 3.3"
