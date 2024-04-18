@@ -10,4 +10,12 @@
 
 require 'faker'
 
-system("bin/rails db:fixtures:load")
+puts("🪴 Seeding the databases...")
+
+# Load the seeding files from the seeds folder in /db
+Dir[File.join(Rails.root, "db", "seeds", "*.rb")].sort.each do |seed|
+  puts "Loading seeding file #{seed}"
+  load seed
+end
+
+puts ("Seeding finished successfully 🎉")

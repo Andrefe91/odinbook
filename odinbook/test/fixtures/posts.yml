@@ -7,3 +7,15 @@
 # two:
 #   title: MyString
 #   body: MyText
+
+one:
+  title: First Post
+  body: This is the first post
+  user_id: 1
+
+two:
+  title: Second Post
+  body: This is the second post
+  user_id: 2
+
+
