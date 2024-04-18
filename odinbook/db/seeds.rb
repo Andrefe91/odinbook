@@ -10,4 +10,4 @@
 
 require 'faker'
 
-
+system("bin/rails db:fixtures:load")
