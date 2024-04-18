@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<main>
+    <h1>OdinBook, the ultimate social newtwork</h1>
+    <p>An experiment to study and practice this web framework</p>
+
+    <% if user_signed_in? %>
+        <%=  %>
+    <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Enter as Invited", posts_path %>
+    <% end %>
+
+</main>
