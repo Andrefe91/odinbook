@@ -1,9 +1,12 @@
 <main>
-    <h1>OdinBook, the ultimate social network</h1>
+    <h2>OdinBook, the ultimate social network</h2>
     <p>An experiment to study and practice this web framework</p>
 
     <% if user_signed_in? %>
-        <%=  %>
+        <div>
+            <p>Welcome Back, <%= current_user.email %></p>
+        </div>
+        <%= link_to "Go to the HomePage", posts_path%>
     <% else %>
         <%= link_to "Log in", new_user_session_path %>
         <%= link_to "Enter without Sign in", posts_path %>

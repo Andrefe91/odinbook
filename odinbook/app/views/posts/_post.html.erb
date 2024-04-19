@@ -1,13 +1,18 @@
 <div>----------------------------------------------------------</div>
+<% if post.user.id == current_user.id %>
+    <div>
+        <%= link_to "[Edit Post]", edit_post_path(post) %>
+        <%= button_to "[Delete Post]", post_path(post), method: :delete %>
+    </div>
+<% end %>
+
 <div>
-    <h3><%= post.title %></h3>
-    <p>[<%= post.user.email %>]</p>
+    <h3><%= link_to post.title, post_path(post) %></h3>
+    <p>[<%= post.user.email %>] - <%= post.created_at.strftime("%d %b %y") %></p>
 </div>
 
 <div>
     <p><%= post.body %></p>
 </div>
 
-<div>
-    
-</div>
+
