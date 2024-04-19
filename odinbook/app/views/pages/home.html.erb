@@ -1,12 +1,12 @@
 <main>
-    <h1>OdinBook, the ultimate social newtwork</h1>
+    <h1>OdinBook, the ultimate social network</h1>
     <p>An experiment to study and practice this web framework</p>
 
     <% if user_signed_in? %>
         <%=  %>
     <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-        <%= link_to "Enter as Invited", posts_path %>
+        <%= link_to "Log in", new_user_session_path %>
+        <%= link_to "Enter without Sign in", posts_path %>
     <% end %>
 
 </main>

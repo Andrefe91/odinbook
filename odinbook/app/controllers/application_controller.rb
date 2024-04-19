@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+#Require sign in for anything except show the index page of a controller
+  
 end
