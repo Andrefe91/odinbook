@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
   devise_for :users
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,6 +11,14 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # Defines a resourceful route for posts
   resources :posts
+
+  # Usefull for linking a post to it's user
+  resources :users do
+    resources :posts
+  end
+
+
   root "pages#home"
 end

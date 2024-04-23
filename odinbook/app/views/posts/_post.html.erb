@@ -1,5 +1,4 @@
 <div>----------------------------------------------------------</div>
-<%= render partial: "controls", locals: {post: post} %>
 
 <div>
     <h3><%= link_to post.title, post_path(post) %></h3>
@@ -10,4 +9,5 @@
     <p><%= post.body %></p>
 </div>
 
+<%= render partial: "controls", locals: {post: post} %>
 

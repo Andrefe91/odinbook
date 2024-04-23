@@ -4,9 +4,6 @@ class User < ApplicationRecord
   has_many :interactions, dependent: :destroy
   has_many :likes, through: :interactions, source: :post, dependent: :destroy
 
-
-
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
