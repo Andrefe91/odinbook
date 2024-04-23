@@ -1,0 +1,9 @@
+<% unless current_user.nil? %>
+    <% if post.user.id == current_user.id %>
+        <div>
+            <%= link_to "[Edit Post]", edit_post_path(post) %>
+            <%= button_to "[Delete Post]", post_path(post), method: :delete %>
+        </div>
+    <% end %>
+<% end %>
+
