@@ -10,7 +10,7 @@
 
 require 'faker'
 
-puts("🪴 Seeding the databases...")
+puts("🌱 Seeding the databases...")
 
 # Load the seeding files from the seeds folder in /db
 Dir[File.join(Rails.root, "db", "seeds", "*.rb")].sort.each do |seed|
