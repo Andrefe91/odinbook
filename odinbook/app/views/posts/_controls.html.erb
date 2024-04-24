@@ -15,10 +15,13 @@
             uses the #size, as #count will always do a COUNT query, while #size will skip
             the query if the responses are already loaded. %>
 
-            (<%= post.likes.size %> People Likes it)
+            <%# This count has been changed from post.likes.size to post.interactions.size so as to get
+            the count from the counter_cache %>
+            (<%= post.interactions.size %> People Likes it)
         </div>
 
         <div>
+            <%# This query also uses the counter_cache option %>
             <%= link_to "[#{post.comments.size} Comments]", post_path(post) %>
         </div>
     </div>

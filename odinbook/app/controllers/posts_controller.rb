@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all.includes(:user)
+    # Added an ordering so the first post in the index are always the most recent
+    @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def show
