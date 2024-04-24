@@ -52,10 +52,12 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    # When you pass comments: :user to the includes method, you are instructing Rails to not only preload the comments
+    # associated with the Post but also to preload the User associated with each of those comments. This is a nested
+    # includes, which is useful when you have a chain of objects connected through associations and you need to access
+    # properties from the extended chain.
+
+    @post = Post.includes(comments: :user).find(params[:id])
     # @post = Post.includes(:comments).find(params[:id])
   end
-
-
-
 end

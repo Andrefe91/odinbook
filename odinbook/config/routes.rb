@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # Defines a resourceful route for posts
   resources :posts
 
+  #Define resources for interactions, but only needed for create and destroy actions
   resources :interactions, only: [:create, :destroy]
 
   # Usefull for linking a post to it's user
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  #Usefull for linking comments to it's post
+  resources :posts do
+    resources :comments
+  end
 
   root "pages#home"
 end

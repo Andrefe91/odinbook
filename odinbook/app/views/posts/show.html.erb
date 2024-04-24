@@ -20,13 +20,27 @@
 </div>
 
 <div>
-    <h4>
+    <h5>
         Comments:
-    </h4>
+    </h5>
 
     <% if  @post.comments.size == 0 %>
         <p>So much empty, write a comment</p>
     <% else %>
-
+        <% @post.comments.each do |comment| %>
+            <div>
+                <p>
+                    <%= "#{comment.user.email.split("@")[0].capitalize}:" %>
+                </p>
+                <p>
+                    <%= comment.body %>
+                    <%= button_to "[X]", post_comment_path(@post, comment), method: :delete %>
+                </p>
+            </div>
+        <% end %>
     <% end %>
+</div>
+
+<div>
+    <%= render "comments_form" %>
 </div>
