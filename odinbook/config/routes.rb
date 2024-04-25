@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   #Define resources for interactions, but only needed for create and destroy actions
   resources :interactions, only: [:create, :destroy]
 
+  # Define resources for interactions, but only needed for index, create and destroy actions
+  resources :users do
+    resources :relations, only: [:create, :destroy, :index]
+  end
+
   # Usefull for linking a post to it's user
   resources :users do
     resources :posts

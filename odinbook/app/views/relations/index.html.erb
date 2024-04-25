@@ -1,0 +1,14 @@
+<%= link_to "[Home Page]", posts_path %>
+
+<h3>All the users in OdinBook: </h3>
+
+<div>
+    <% @users.each do |user| %>
+        <% unless user.id == current_user.id %>
+            <div>
+                <%= render partial: "relation", locals: {user: user} %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+

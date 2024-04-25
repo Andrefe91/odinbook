@@ -2,7 +2,7 @@
     <%= link_to "[Log in]", new_user_session_path %>
 <% else %>
     <div>
-        <%= link_to "[List of Users]", users_index_path %>
+        <%= link_to "[List of Users]", user_relations_path(current_user) %>
     </div> <br>
 
     <div>

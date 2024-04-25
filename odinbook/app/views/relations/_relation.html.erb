@@ -1,0 +1,7 @@
+<div> <%= user.email %>
+    <% if followed_users.include?(user.id) %>
+        <%= button_to "[Unfollow]", user_relation_path(current_user, user), method: :delete  %>
+    <% else %>
+        <%= button_to "[Follow]", user_relations_path(current_user, id: user.id), method: :post %>
+    <% end %>
+</div>
