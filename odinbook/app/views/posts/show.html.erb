@@ -32,6 +32,7 @@
                 <p>
                     <%= "#{comment.user.email.split("@")[0].capitalize}:" %>
                 </p>
+                
                 <p>
                     <%= comment.body %>
                     <%= button_to "[X]", post_comment_path(@post, comment), method: :delete %>

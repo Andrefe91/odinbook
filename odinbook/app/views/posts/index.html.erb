@@ -2,6 +2,10 @@
     <%= link_to "[Log in]", new_user_session_path %>
 <% else %>
     <div>
+        <%= link_to "[List of Users]", users_index_path %>
+    </div> <br>
+
+    <div>
         <p>Logged as: [<%= current_user.email.split("@")[0].capitalize %>] - (<%= current_user.email %>)</p>
         <p><%= button_to "[Log out]", destroy_user_session_path, method: :delete %></p>
     </div>
