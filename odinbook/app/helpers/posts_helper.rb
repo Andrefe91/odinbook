@@ -4,5 +4,4 @@ module PostsHelper
     # return the same list of values.
     @user_likes_list ||= current_user.likes.ids
   end
-  
 end

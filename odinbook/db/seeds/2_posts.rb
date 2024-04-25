@@ -1,4 +1,4 @@
-30.times do
+50.times do
   Post.create(
               title: Faker::TvShows::BrooklynNineNine.character,
               body: Faker::TvShows::BrooklynNineNine.quote,

@@ -5,6 +5,12 @@ class PostsController < ApplicationController
   def index
     # Added an ordering so the first post in the index are always the most recent
     @posts = Post.all.includes(:user).order(created_at: :desc)
+
+    # This check is done because of the followed_users method, which requires a logged user
+    if user_signed_in?
+      #Idea from here: https://chat.openai.com/share/a93ee5f6-2efc-4e4d-9ae3-87a24193cc60
+      @followed_users_posts = @posts.select {|post| followed_users.include?(post.user_id)}
+    end
   end
 
   def show
@@ -60,4 +66,11 @@ class PostsController < ApplicationController
     @post = Post.includes(comments: :user).find(params[:id])
     # @post = Post.includes(:comments).find(params[:id])
   end
+
+  def followed_users
+    # This is memoization, the @user_likes_list only gets calculated on the first call, and subsequent calls
+    # return the same list of values.
+    @followed_users ||= current_user.following.map { |user| user.id} << current_user.id
+  end
+
 end

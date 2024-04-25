@@ -16,4 +16,14 @@
     <%= link_to "[New Post]", new_post_path %>
 <% end %>
 
-<%= render @posts %>
+<%# Logic for showing the followed posts as a signed user or all the Post
+as guest %>
+<% if user_signed_in? %>
+    <%# This renders the collection of followed users posts only %>
+    <%= render partial: "post", collection: @followed_users_posts, as: :post %>
+<% else %>
+    <%# This shows all the post from all the users %>
+    <%= render @posts %>
+<% end %>
+
+
