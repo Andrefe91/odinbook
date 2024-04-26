@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  get 'users/index'
+
+  get '/user/:username', to: "profiles#show", as: 'user'
 
   # Defines a resourceful route for posts
   resources :posts
@@ -24,6 +25,11 @@ Rails.application.routes.draw do
   # Usefull for linking a post to it's user
   resources :users do
     resources :posts
+  end
+
+  #Define the route for the profile of a user
+  resources :users do
+    resources :profiles, only: [:show]
   end
 
   #Usefull for linking comments to it's post
