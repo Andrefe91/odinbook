@@ -1,6 +1,29 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div>
+    <%= link_to "[Back to Home Page]", posts_path %>
+
+    <% if current_user == @user %>
+        <%= link_to "[Edit Profile]", edit_user_registration_path %>
+    <% end %>
+</div>
+
+<div>
+    <h2>
+        Profile:
+    </h2>
+
+    <div>
+        <p>UserName: <%= @user.username %></p>
+        <p>E-mail: <%= @user.email %> </p>
+        <p>Registered since: <%= @user.created_at.strftime("%d %b %y") %></p>
+        <p>Following: <%= @user.following.count %></p>
+        <p>Followers: <%= @user.followers.count %></p>
+    </div>
+
+    <div>
+        <h3>Recent Posts: </h3>
+
+        <%= render partial: "posts/post", collection: @user_posts, as: :post%>
+    </div>
+</div>
 
 
-
-<%= @user.email %>
