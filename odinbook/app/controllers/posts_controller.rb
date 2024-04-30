@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     # Added an ordering so the first post in the index are always the most recent
-    @posts = Post.all.includes(:user).order(created_at: :desc)
+    @posts = Post.all.with_rich_text_body.includes(:user).order(created_at: :desc)
 
     # This check is done because of the followed_users method, which requires a logged user
     if user_signed_in?
