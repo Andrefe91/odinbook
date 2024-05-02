@@ -15,7 +15,8 @@
         <% if @user.avatar.attached? %>
             <img src="<%= url_for(@user.avatar) %>" alt="Profile_image" style= 'width: 150px; height: auto'>
         <% else %>
-            <%= image_tag 'profile_default.png', alt: 'Default Profile Image', style: 'width: 150px; height: auto' %>
+            #The application uses Gravatar as an option to obtain the user avatar if not file has been uploaded.
+            <img src=<%= "#{gravatar_for(@user)}" %> alt="">
         <% end %>
     </div>
 
