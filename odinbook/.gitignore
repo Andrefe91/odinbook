@@ -42,3 +42,6 @@
 /config/credentials/development.key
 
 /config/credentials/production.key
+
+# Ignore GCS credentials file
+/gcs.keyfile.json

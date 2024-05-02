@@ -13,12 +13,12 @@ Requisites:
     ✔️ 8) Posts should always display the post content, author, comments, and likes.
     ✔️ 9) There should be an index page for posts, which shows all the recent posts from the current user and users they are following.
     10) Users can create a profile with a profile picture. You may be able to get the profile picture when users sign in using OmniAuth. If this isn’t the case you can use Gravatar to generate the photo.
-    11) A user’s profile page should contain their profile information, profile photo, and posts.
+    ✔️ 11) A user’s profile page should contain their profile information, profile photo, and posts.
     ✔️ 12) There should be an index page for users, which shows all users and buttons for sending follow requests to users the user is not already following or have a pending request. (Altered, there is no follow acceptance required).
     13) Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
     14) Deploy your App to a hosting provider.
     15) Set up an email provider and start sending real emails.
-    
+
 Extra credit
 
     1) Make posts also allow images (either just via a URL or, more complicated, by uploading one).

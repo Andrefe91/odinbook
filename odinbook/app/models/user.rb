@@ -19,6 +19,8 @@ class User < ApplicationRecord
     # This association collects all the users that this user follows
   has_many :following, through: :following_relation, source: :following
 
+  has_one_attached :avatar
+
   def follow(user)
     following_relation.create(following_id: user.id)
   end

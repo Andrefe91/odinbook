@@ -12,7 +12,16 @@
     </h2>
 
     <div>
+        <% if @user.avatar.attached? %>
+            <img src="<%= url_for(@user.avatar) %>" alt="Profile_image" style= 'width: 150px; height: auto'>
+        <% else %>
+            <%= image_tag 'profile_default.png', alt: 'Default Profile Image', style: 'width: 150px; height: auto' %>
+        <% end %>
+    </div>
+
+    <div>
         <p>UserName: <%= @user.username %></p>
+        <p>Name: <%= @user.name %></p>
         <p>E-mail: <%= @user.email %> </p>
         <p>Registered since: <%= @user.created_at.strftime("%d %b %y") %></p>
         <p>Following: <%= @user.following.count %></p>

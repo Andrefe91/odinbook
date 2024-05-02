@@ -45,7 +45,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Gem for S3 Amazon Bucket
-gem "aws-sdk-s3", require: false
+# gem "aws-sdk-s3", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -83,3 +83,5 @@ gem "solargraph", "~> 0.50.0"
 gem "faker", "~> 3.3"
 
 gem 'bullet', group: 'development'
+
+gem "google-cloud-storage", "~> 1.11", require: false
