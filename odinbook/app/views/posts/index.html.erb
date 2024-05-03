@@ -19,6 +19,11 @@
 <%# Logic for showing the followed posts as a signed user or all the Post
 as guest %>
 <% if user_signed_in? %>
+    <%# For the first time, the user will have to create something or follow someone to see something in the index page %>
+    <% if @followed_users_posts.size == 0 %>
+        <div><br />[So much empty, follow someone or create a post!]</div>
+    <% end %>
+
     <%# This renders the collection of followed users posts only %>
     <%= render partial: "post", collection: @followed_users_posts, as: :post %>
 <% else %>

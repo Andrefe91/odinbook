@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
-  has_many :interactions, dependent: :destroy
+  has_many :interactions
   has_many :likes, through: :interactions, source: :post, dependent: :destroy
 
   # More information here: https://dev.to/lberge17/building-a-follower-relationship-in-rails-108n
