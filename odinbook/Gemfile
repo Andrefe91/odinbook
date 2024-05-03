@@ -85,3 +85,5 @@ gem "faker", "~> 3.3"
 gem 'bullet', group: 'development'
 
 gem "google-cloud-storage", "~> 1.11", require: false
+
+gem "letter_opener", group: :development
